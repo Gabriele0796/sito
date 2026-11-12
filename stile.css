@@ -282,3 +282,18 @@ figure{margin:0}
 .voce-articolo p{max-width:62ch;margin:0 0 14px}
 .voce-articolo .etichetta{margin-bottom:10px}
 .voce-articolo:hover{padding-left:12px}
+
+/* ---------- telefono: la foto viene prima del testo e sfuma nel titolo, come nella prima schermata della home ---------- */
+@media (max-width:860px){
+  .sezione-foto{padding-top:24px}
+  .sezione-foto .testo-foto{padding-bottom:64px;margin-top:-64px;position:relative;z-index:1}
+  .foto-libera{order:-1;margin:0 auto;max-width:440px;width:100%}
+  .foto-libera img,.chiaro .foto-libera img,.chiaro-2 .foto-libera img{max-height:none;
+    -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 84%);
+    mask-image:linear-gradient(to bottom,#000 50%,transparent 84%)}
+}
+@media (max-width:480px){.foto-libera{max-width:none;width:auto;margin:0 calc(-1 * var(--gutter))}}
+@media (max-width:860px){.chiaro-2 .foto-libera img{
+  -webkit-mask-image:linear-gradient(to bottom,#000 46%,transparent 76%);
+  mask-image:linear-gradient(to bottom,#000 46%,transparent 76%)}
+  .chiaro-2.sezione-foto .testo-foto{margin-top:-120px}}
