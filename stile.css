@@ -56,8 +56,7 @@ h3{font-size:clamp(1.7rem,3vw,2.1rem);line-height:1;margin-bottom:.35em}
 .scuro h1 em,.scuro h2 em,.scuro-2 h2 em,.scuro h3 em{font-style:normal;color:var(--lime)}
 /* evidenziatura nera: copre solo l'altezza delle lettere, così quando il titolo va a capo non copre la riga sopra */
 .chiaro h1 em,.chiaro-2 h1 em,.chiaro h2 em,.chiaro-2 h2 em{font-style:normal;color:var(--lime);padding:0 .12em;background:linear-gradient(var(--nero),var(--nero)) 0 38%/100% .9em no-repeat;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.chiaro h2 em,.chiaro-2 h2 em{white-space:nowrap}
-@media (max-width:380px){.chiaro h2 em,.chiaro-2 h2 em{white-space:normal}}
+/* l'evidenziatura va a capo con il titolo (prima non andava a capo e sbordava nella colonna accanto) */
 .etichetta{font-size:.76rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;margin:0 0 18px;color:var(--grigio-su-bianco)}
 .scuro .etichetta,.scuro-2 .etichetta{color:var(--grigio-su-nero)}
 .grande{font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.5}
@@ -138,7 +137,9 @@ h3{font-size:clamp(1.7rem,3vw,2.1rem);line-height:1;margin-bottom:.35em}
 .citazione-forte span{color:var(--lime);white-space:nowrap}
 
 /* ---------- caso studio ---------- */
-.numero{font-family:var(--display);font-size:clamp(5.6rem,17vw,12rem);line-height:.82;color:var(--lime);letter-spacing:-.01em}
+.numero{font-family:var(--display);font-size:clamp(4.4rem,8.5vw,9.5rem);font-size:min(9.5rem,30cqi);line-height:.82;color:var(--lime);letter-spacing:-.01em;white-space:nowrap}
+/* il numero grande si misura sulla sua colonna: resta sempre dentro con un margine */
+:has(> .numero){container-type:inline-size}
 .numero-sotto{font-family:var(--display);text-transform:uppercase;font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1;margin:14px 0 28px}
 blockquote{margin:28px 0 0;padding:0 0 0 20px;border-left:3px solid var(--lime);font-size:1.15rem;line-height:1.5}
 .chiaro blockquote,.chiaro-2 blockquote{border-left-color:var(--nero)}
